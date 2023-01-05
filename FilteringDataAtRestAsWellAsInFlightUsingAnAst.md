@@ -5,8 +5,8 @@ These outliers were surfaced in some UI that allows the user to filter logs base
 These criteria were predefined and you could toggle them via some checkboxes. 
 The filter expression was part of the request and forwarded to the backend that did a simple mapping to some SQL. 
 We decided that perhaps we could make this aspect more flexible and enable users to freely query the logs. 
-Unfortunatly there was no simple mapping from what is shown in the UI and the actual data schema. 
-Additionally, it would be great if we could perform this type of filtering on the incoming log stream to create live views that automically update with whatever logs that match the filter expression.
+Unfortunately there was no simple mapping from what is shown in the UI and the actual data schema. 
+Additionally, it would be great if we could perform this type of filtering on the incoming log stream to create live views that automatically update with whatever logs that match the filter expression.
 
 Ok, cool. 
 I wrote down some proposals on how we could approach this and asked colleagues for feedback. 
@@ -38,8 +38,8 @@ print(ast)
   (eq system "payment"))
 ```
 
-Exacly what the AST building blocks should be wasn't a given. 
-In order to build something reasonable, I had to define what qualities an AST representation should posses for our purposes - mainly with regards to the developer experience. 
+Exactly what the AST building blocks should be wasn't a given. 
+In order to build something reasonable, I had to define what qualities an AST representation should possess for our purposes - mainly with regards to the developer experience. 
 * Prefer flat over deep representations - easier to navigate the AST visually
 * Strict in what comparators can be applied to what fields - prevent garbage AST's that do not produce a sane filter expression
 * Able to be used in the multiple contexts - as mentioned above, support live views but primarily generate SQL 
